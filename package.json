@@ -9,6 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run-script build",
+    "local-start": "node server.js && cd client && npm install && npm run-script build"
   }
 }
