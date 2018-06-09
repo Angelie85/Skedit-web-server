@@ -1,4 +1,4 @@
 client/.gitignore
 client/node_module
 node_module/
-.gitignore
+dev.js
