@@ -6,7 +6,7 @@
   "scripts": {
     "startLocalWatch": "concurrently \"npm run-script start\" \"npm run-script client\"",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm run-script build",
+    "heroku-postbuild": "cd client && npm install",
     "local-start": "node server.js && cd client && npm install && npm run-script build",
     "client": "cd ./client && npm run-script start",
     "dev": "nodemon server.js"
