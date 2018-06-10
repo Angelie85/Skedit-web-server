@@ -30,6 +30,10 @@ class MainCalender extends React.Component {
 
 
   showModal=(isShow)=>{
+    if(!isShow){
+      this.props.setTitle('')
+    }
+
     this.setState({show:isShow})
   }
 
@@ -41,13 +45,13 @@ class MainCalender extends React.Component {
     this.setState({end:ed})
   }
 
-  setTitle=e=>{
-    this.setState({title:e})
-  }
+  // setTitle=e=>{
+  //   this.setState({title:e})
+  // }
 
   onSlotChange=(slotInfo)=>{
-    var startDate = moment(slotInfo.start.toLocaleString()).format("YYYY-MM-DDm:ss");
-    var endDate = moment(slotInfo.end.toLocaleString()).format("YYYY-MM-DDm:ss");
+    // var startDate = moment(slotInfo.start.toLocaleString()).format("YYYY-MM-DDm:ss");
+    // var endDate = moment(slotInfo.end.toLocaleString()).format("YYYY-MM-DDm:ss");
     this.setModalValue({
       start:slotInfo.start,
       end:slotInfo.end,
@@ -79,8 +83,9 @@ class MainCalender extends React.Component {
     let event = {
       start:this.state.start,
       end:this.state.end,
-      title:this.state.title
+      title:this.props.modalTitle
       }
+      this.props.setTitle('')
     this.addEvent(event)
     this.showModal(false)
   }
@@ -104,12 +109,12 @@ class MainCalender extends React.Component {
         <CalendarDetailModal key={1}
                              show={this.state.show}
                              handleShow={(isShow)=>this.showModal(isShow)}
-                             title={this.state.title}
+                             title={this.props.modalTitle}
                              start={moment(this.state.start)}
                              end={moment(this.state.end)}
                              setStartDate={sd=>this.setStartDate(sd)}
                              setEndDate={ed=>this.setEndDate(ed)}
-                             setTitle={e=>this.setTitle(e)}
+                             setTitle={e=>this.props.setTitle(e)}
                              handleSave={e=>this.handleSave(e)}
         />
 

@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run-script server\" \"npm run-script client\"",
-    "build": "",
     "start": "node server.js",
     "herokubuild": "cd client && npm install",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import MainCalendar from './components/main-calendar'
+import MainCalendar from './containers/MainCalendarContainer'
 
 class App extends Component {
   render() {
