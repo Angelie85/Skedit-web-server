@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startLocalWatch": "concurrently \"npm run-script start\" \"npm run-script client\"",
+    "dev": "concurrently \"npm run-script server\" \"npm run-script client\"",
+    "build": "",
     "start": "node server.js",
     "herokubuild": "cd client && npm install",
-    "heroku-postbuild": "npm install --prefix client",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "local-start": "node server.js && cd client && npm install && npm run-script build",
-    "client": "cd ./client && npm run-script start",
-    "cstart": "npm run-script start --prefix client",
-    "dev": "nodemon server.js"
+    "client": "npm run-script start --prefix client",
+    "client-build": "npm run-script build --prefix client",
+    "server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
