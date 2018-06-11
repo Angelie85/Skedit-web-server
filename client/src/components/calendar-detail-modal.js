@@ -10,15 +10,6 @@ import 'react-datepicker/dist/react-datepicker.css';
       end:this.props.end,
     }
 
-    // setTitle=(e)=>{
-    //   this.props.setTitle(e.target.value)
-    // }
-
-    // handleSave=()=>{
-    //   this.props.handleSave()
-    //   this.
-    // }
-
   render(){
   return [
 
